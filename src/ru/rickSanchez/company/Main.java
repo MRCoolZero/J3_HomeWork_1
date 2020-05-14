@@ -20,24 +20,34 @@ public class Main {
 
 
         System.out.println("Task number Three:");
-        Box<Apple> appleBox1 = new Box<>(new Apple(), new Apple());
-        appleBox1.add(new Apple());
+        Box<Apple> appleBox1 = new Box<>(new Apple(), new Apple(),new Apple());
+        appleBox1.add(new Apple(), new Apple());
         System.out.println("appleBox1: " + appleBox1.getWeight()+" g.");
 
         Box<Apple> appleBox2 = new Box<>(new Apple());
         appleBox2.add(new Apple(), new Apple());
         System.out.println("appleBox2: " + appleBox2.getWeight()+" g.");
 
+        Box<Apple> appleBox3 = new Box<>(new Apple(), new Apple(), new Apple());
+        appleBox3.add(new Apple(), new Apple());
+        System.out.println("appleBox2: " + appleBox3.getWeight()+" g.");
+
         if (appleBox1.compare(appleBox2)) {
-            System.out.println("The weight of both boxes is the same.");
+            System.out.println("appleBox1 and appleBox2 - the weight of both boxes is the same.");
         } else {
             System.out.println("The weight of boxes appleBox1 and appleBox2 is not equal.");
         }
 
-        appleBox1.add(appleBox2);
+        if(appleBox1.compare(appleBox3)){
+            System.out.println("appleBox1 and appleBox3 - the weight of both boxes is the same.");
+        } else {
+            System.out.println("The weight of boxes appleBox1 and appleBox3 is not equal.");
+        }
+
+        appleBox1.add(appleBox3);
         System.out.println("appleBox1 weight: " + appleBox1.getWeight() + " g.");
 
-        Box<Orange> orangeBox = new Box<>(new Orange());
+        Box<Orange> orangeBox = new Box<>(new Orange(),new Orange(),new Orange());
         orangeBox.add(new Orange(), new Orange());
         System.out.println("orangeBox weight: " + orangeBox.getWeight());
     }
